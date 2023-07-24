@@ -7,7 +7,7 @@ import { Menu, MenuItem, MenuDivider } from "react-native-material-menu";
 
 const Appbar = () => {
   const [loaded] = useFonts({
-    "League of Legends": require("../assets/fonts/FrizQuadrataRegular.ttf"),
+    "League of Legends": require("../assets/fonts/Friz Quadrata Regular.ttf"),
   });
 
   if (!loaded) {
@@ -37,7 +37,6 @@ const styles = StyleSheet.create({
   text: {
     fontFamily: "League of Legends",
     color: "#C89B3C",
-    fontSize: 25,
-    fontWeight: "bold",
+    fontSize: 30,
   },
 });
