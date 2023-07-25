@@ -1,9 +1,10 @@
 import { StyleSheet, Text, View } from "react-native";
 import React, { useState } from "react";
+import { useNavigation } from "@react-navigation/native";
+import { DrawerActions } from "@react-navigation/native";
 import { useFonts } from "expo-font";
 import { Feather } from "@expo/vector-icons";
 import SettingsMenu from "./SettingsMenu";
-import { Menu, MenuItem, MenuDivider } from "react-native-material-menu";
 
 const Appbar = () => {
   const [loaded] = useFonts({
@@ -13,10 +14,15 @@ const Appbar = () => {
   if (!loaded) {
     return null;
   }
-
+  const navigation = useNavigation();
   return (
     <View style={styles.container}>
-      <Feather name="menu" size={30} color="#C89B3C" />
+      <Feather
+        name="menu"
+        size={30}
+        color="#C89B3C"
+        onPress={() => navigation.dispatch(DrawerActions.openDrawer())}
+      />
       <Text style={styles.text}>Rift Legends</Text>
       <SettingsMenu />
     </View>
