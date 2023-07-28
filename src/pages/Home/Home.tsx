@@ -10,10 +10,12 @@ interface Region {
 
 const Home = () => {
   const [champions, setChampions] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     getChampionsData().then((champions) => {
       setChampions(champions as any);
+      setIsLoading(false);
     });
   }, []);
 
@@ -39,6 +41,7 @@ const Home = () => {
               key={region.name}
               regionName={region.name}
               champions={champions}
+              isLoading={isLoading}
             />
           );
         })}
