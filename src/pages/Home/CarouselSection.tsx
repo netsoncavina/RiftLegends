@@ -1,6 +1,7 @@
-import { StyleSheet, Text, View } from "react-native";
 import React from "react";
+import { StyleSheet, Text, View } from "react-native";
 import Carousel from "../../components/Carousel";
+import CarouselSectionLoading from "./CarouselSectionLoading";
 import {
   NoxusChampions,
   DemaciaChampions,
@@ -16,6 +17,7 @@ interface Champion {
 interface CarouselSectionProps {
   regionName: string;
   champions: Champion[];
+  isLoading: boolean;
 }
 
 const getChampionsByRegion = (champions: Champion[], regionName: string) => {
@@ -41,13 +43,23 @@ const getChampionsByRegion = (champions: Champion[], regionName: string) => {
   return championsByRegion;
 };
 
-const CarouselSection = ({ regionName, champions }: CarouselSectionProps) => {
+const CarouselSection = ({
+  regionName,
+  champions,
+  isLoading,
+}: CarouselSectionProps) => {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>{regionName}</Text>
-      <View style={styles.carouselContainer}>
-        <Carousel data={getChampionsByRegion(champions, regionName)} />
-      </View>
+      {isLoading ? (
+        <CarouselSectionLoading />
+      ) : (
+        <>
+          <Text style={styles.title}>{regionName}</Text>
+          <View style={styles.carouselContainer}>
+            <Carousel data={getChampionsByRegion(champions, regionName)} />
+          </View>
+        </>
+      )}
     </View>
   );
 };
