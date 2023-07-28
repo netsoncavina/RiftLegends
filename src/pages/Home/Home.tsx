@@ -13,7 +13,7 @@ const Home = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    getChampionsData().then((champions) => {
+    getChampionsData("en_US").then((champions) => {
       setChampions(champions as any);
       setIsLoading(false);
     });
