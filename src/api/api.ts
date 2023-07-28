@@ -1,8 +1,8 @@
 import axios from "axios";
 
-export const getChampionsData = async () => {
+export const getChampionsData = async (language: string) => {
   const response = await axios.get(
-    "http://ddragon.leagueoflegends.com/cdn/13.14.1/data/en_US/champion.json"
+    `http://ddragon.leagueoflegends.com/cdn/13.14.1/data/${language}/champion.json`
   );
 
   const championsData = response.data.data;
