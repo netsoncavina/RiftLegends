@@ -34,11 +34,14 @@ export default Appbar;
 const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
-    backgroundColor: "#001A6C",
+    // backgroundColor: "#001A6C",
+    backgroundColor: "#1F1F1F",
     height: 80,
     justifyContent: "space-between",
     alignItems: "center",
     paddingHorizontal: 20,
+    borderBottomColor: "#C89B3C",
+    borderBottomWidth: 1,
   },
   text: {
     fontFamily: "League of Legends",

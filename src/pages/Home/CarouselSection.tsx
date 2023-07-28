@@ -43,25 +43,9 @@ const getChampionsByRegion = (champions: Champion[], regionName: string) => {
 
 const CarouselSection = ({ regionName, champions }: CarouselSectionProps) => {
   return (
-    <View>
-      <Text
-        style={{
-          color: "#C89B3C",
-          fontSize: 30,
-          fontFamily: "League of Legends",
-        }}
-      >
-        {regionName}
-      </Text>
-      <View
-        style={{
-          display: "flex",
-          flexDirection: "row",
-          justifyContent: "space-evenly",
-          flexWrap: "wrap",
-          margin: 10,
-        }}
-      >
+    <View style={styles.container}>
+      <Text style={styles.title}>{regionName}</Text>
+      <View style={styles.carouselContainer}>
         <Carousel data={getChampionsByRegion(champions, regionName)} />
       </View>
     </View>
@@ -70,4 +54,21 @@ const CarouselSection = ({ regionName, champions }: CarouselSectionProps) => {
 
 export default CarouselSection;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  container: {
+    marginTop: 10,
+  },
+  title: {
+    color: "#C89B3C",
+    fontSize: 30,
+    fontFamily: "League of Legends",
+    paddingLeft: "3%",
+  },
+  carouselContainer: {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-evenly",
+    flexWrap: "wrap",
+    margin: 10,
+  },
+});
