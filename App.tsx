@@ -57,6 +57,7 @@ export default function App() {
             component={ChampionPage}
             options={{
               headerShown: false,
+              drawerItemStyle: { display: "none" },
             }}
           />
         </Drawer.Navigator>
