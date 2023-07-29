@@ -16,7 +16,12 @@ interface ILanguage {
 
 export type RootStackParamList = {
   Home: undefined;
-  ChampionPage: undefined;
+  ChampionPage: {
+    id: string;
+    name: string;
+    title: string;
+    imageUri: string;
+  };
 };
 
 export default function App() {
@@ -49,9 +54,9 @@ export default function App() {
           />
           <Drawer.Screen
             name="ChampionPage"
-            children={() => <ChampionPage />}
+            component={ChampionPage}
             options={{
-              drawerItemStyle: { display: "none" },
+              headerShown: false,
             }}
           />
         </Drawer.Navigator>
