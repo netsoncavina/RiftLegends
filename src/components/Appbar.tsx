@@ -6,7 +6,12 @@ import { useFonts } from "expo-font";
 import { Feather } from "@expo/vector-icons";
 import SettingsMenu from "./SettingsMenu";
 
-const Appbar = () => {
+interface AppbarProps {
+  language: string;
+  setLanguage: React.SetStateAction<any>;
+}
+
+const Appbar = ({ language, setLanguage }: AppbarProps) => {
   const [loaded] = useFonts({
     "League of Legends": require("../assets/fonts/Friz Quadrata Regular.ttf"),
   });
@@ -24,7 +29,7 @@ const Appbar = () => {
         onPress={() => navigation.dispatch(DrawerActions.openDrawer())}
       />
       <Text style={styles.text}>Rift Legends</Text>
-      <SettingsMenu />
+      <SettingsMenu language={language} setLanguage={setLanguage} />
     </View>
   );
 };
