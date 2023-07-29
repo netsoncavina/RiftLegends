@@ -4,7 +4,12 @@ import { Menu, MenuItem, MenuDivider } from "react-native-material-menu";
 import { Feather } from "@expo/vector-icons";
 import LanguageModal from "./LanguageModal";
 
-const SettingsMenu = () => {
+interface SettingsMenuProps {
+  language: string;
+  setLanguage: React.Dispatch<React.SetStateAction<any>>;
+}
+
+const SettingsMenu = ({ language, setLanguage }: SettingsMenuProps) => {
   const [visible, setVisible] = useState(false);
   const hideMenu = () => setVisible(false);
   const showMenu = () => setVisible(true);
@@ -51,6 +56,7 @@ const SettingsMenu = () => {
       <LanguageModal
         visible={languageModalVisible}
         setVisible={setLanguageModalVisible}
+        setLanguage={setLanguage}
       />
     </>
   );

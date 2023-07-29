@@ -1,28 +1,24 @@
 import React from "react";
-import {
-  StyleSheet,
-  Text,
-  Touchable,
-  TouchableOpacity,
-  View,
-} from "react-native";
+import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import CountryFlag from "react-native-country-flag";
 
 interface LanguagePickerProps {
   isoCode: string;
   languageCode: string;
   language: string;
+  setLanguage: React.Dispatch<React.SetStateAction<any>>;
 }
 
 const LanguagePicker = ({
   isoCode,
   languageCode,
   language,
+  setLanguage,
 }: LanguagePickerProps) => {
   return (
     <TouchableOpacity
       onPress={() => {
-        console.log("LanguagePicker");
+        setLanguage(languageCode);
       }}
     >
       <View
