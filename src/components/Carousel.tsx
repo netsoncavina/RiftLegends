@@ -23,6 +23,7 @@ function carouselCard({ item, index }: Props) {
   return (
     <TouchableOpacity onPress={() => {}}>
       <ChampionCard
+        id={item.id}
         name={item.name}
         title={item.title}
         imageUri={item.imageUri}
