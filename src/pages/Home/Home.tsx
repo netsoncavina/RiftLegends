@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { ScrollView, StyleSheet, Text, View } from "react-native";
+import { Button, ScrollView, StyleSheet, Text, View } from "react-native";
 import Appbar from "../../components/Appbar";
 import CarouselSection from "./CarouselSection";
 import { getChampionsData } from "../../api/api";
@@ -8,16 +8,20 @@ interface Region {
   name: string;
 }
 
-const Home = () => {
+interface HomeProps {
+  language: string;
+}
+
+const Home = ({ language }: HomeProps) => {
   const [champions, setChampions] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    getChampionsData("en_US").then((champions) => {
+    getChampionsData(language).then((champions) => {
       setChampions(champions as any);
       setIsLoading(false);
     });
-  }, []);
+  }, [language]);
 
   const regions = [
     {
@@ -33,7 +37,6 @@ const Home = () => {
 
   return (
     <>
-      <Appbar />
       <ScrollView style={styles.container}>
         {regions.map((region: Region) => {
           return (
