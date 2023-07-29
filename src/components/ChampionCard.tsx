@@ -1,15 +1,29 @@
-import { StyleSheet, Text, TouchableOpacity, View, Image } from "react-native";
 import React from "react";
+import { StyleSheet, Text, TouchableOpacity, View, Image } from "react-native";
+import { useNavigation } from "@react-navigation/native";
+import { StackNavigationProp } from "@react-navigation/stack";
+import { RootStackParamList } from "../../App";
 
 interface ChampionCardProps {
+  id: string;
   name: string;
   title: string;
   imageUri: string;
 }
 
-const ChampionCard = ({ name, title, imageUri }: ChampionCardProps) => {
+const ChampionCard = ({ id, name, title, imageUri }: ChampionCardProps) => {
+  const navigation = useNavigation<StackNavigationProp<RootStackParamList>>();
   return (
-    <TouchableOpacity>
+    <TouchableOpacity
+      onPress={() =>
+        navigation.navigate("ChampionPage", {
+          id: id,
+          name: name,
+          title: title,
+          imageUri: imageUri,
+        })
+      }
+    >
       <View>
         <Image
           source={{
