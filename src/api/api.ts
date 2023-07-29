@@ -19,3 +19,12 @@ export const getChampionsData = async (language: string) => {
   });
   return championsArray;
 };
+
+export const getChampionData = async (championId: string, language: string) => {
+  const response = await axios.get(
+    `https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/${language}/v1/champions/${championId}.json`
+  );
+
+  const championData = response.data;
+  return championData;
+};
