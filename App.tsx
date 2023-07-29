@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, Text, View, Button } from "react-native";
+import { StyleSheet, Text, View, Button, StatusBar } from "react-native";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import { NavigationContainer } from "@react-navigation/native";
 import { PaperProvider } from "react-native-paper";
@@ -19,6 +19,7 @@ export default function App() {
 
   return (
     <PaperProvider>
+      <StatusBar barStyle="light-content" backgroundColor="#1F1F1F" />
       <NavigationContainer>
         <Drawer.Navigator
           initialRouteName="Home"
@@ -33,17 +34,4 @@ export default function App() {
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  text: {
-    fontFamily: "League of Legends",
-    color: "#C89B3C",
-    fontSize: 25,
-    // fontWeight: "bold",
-  },
-});
+const styles = StyleSheet.create({});
