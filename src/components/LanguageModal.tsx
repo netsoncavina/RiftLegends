@@ -6,39 +6,40 @@ import LanguagePicker from "./LanguagePicker";
 interface ModalProps {
   visible: boolean;
   setVisible: React.Dispatch<React.SetStateAction<boolean>>;
+  setLanguage: React.Dispatch<React.SetStateAction<any>>;
 }
 
-const LanguageModal = ({ visible, setVisible }: ModalProps) => {
+const LanguageModal = ({ visible, setVisible, setLanguage }: ModalProps) => {
   const languages = [
     {
       isoCode: "br",
-      languageCode: "pt_br",
+      languageCode: "pt_BR",
       name: "Português",
     },
     {
       isoCode: "us",
-      languageCode: "default",
+      languageCode: "en_US",
       name: "English",
     },
     {
       isoCode: "es",
-      languageCode: "es_es",
+      languageCode: "es_ES",
       name: "Español",
     },
     {
       isoCode: "fr",
-      languageCode: "fr_fr",
+      languageCode: "fr_FR",
       name: "Français",
     },
 
     {
       isoCode: "de",
-      languageCode: "de_de",
+      languageCode: "de_DE",
       name: "Deutsch",
     },
     {
       isoCode: "it",
-      languageCode: "it_it",
+      languageCode: "it_IT",
       name: "Italiano",
     },
   ];
@@ -79,6 +80,7 @@ const LanguageModal = ({ visible, setVisible }: ModalProps) => {
                 isoCode={language.isoCode}
                 languageCode={language.languageCode}
                 language={language.name}
+                setLanguage={setLanguage}
               />
             ))}
           </ScrollView>
