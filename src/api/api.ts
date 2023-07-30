@@ -8,6 +8,7 @@ export const getChampionsData = async (language: string) => {
   const championsData = response.data.data;
   const championsArray = Object.keys(championsData).map((key) => {
     return {
+      id: championsData[key].key,
       name: championsData[key].name,
       title: championsData[key].title,
       imageUri: `https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/${championsData[
