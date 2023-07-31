@@ -49,3 +49,52 @@ export const IoniaChampions = [
   "Yone",
   "Zed",
 ];
+
+export const PiltoverChampions = [
+  "Vi",
+  "Camille",
+  "Jayce",
+  "Ezreal",
+  "Caitlyn",
+  "Heimerdinger",
+  "Seraphine",
+];
+
+export const ZaunChampions = [
+  "Zac",
+  "Dr Mundo",
+  "Twitch",
+  "Viktor",
+  "Blitzcrank",
+  "Singed",
+  "Warwick",
+  "Ziggs",
+  "Janna",
+  "Ekko",
+  "Jinx",
+  "Zeri",
+  "Renata Glasc",
+];
+
+export const BandleCityChampions = [
+  "Yuumi",
+  "Lulu",
+  "Corki",
+  "Rumble",
+  "Veigar",
+  "Tristana",
+  "Teemo",
+];
+
+export const ShurimaChampions = [
+  "Azir",
+  "Rammus",
+  "Renekton",
+  "Nasus",
+  "Xerath",
+  "Amumu",
+  "Sivir",
+  "Skarner",
+  "Taliyah",
+  "Akshan",
+];
