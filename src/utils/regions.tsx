@@ -1,4 +1,5 @@
 export const NoxusChampions = [
+  "Cassiopeia",
   "Darius",
   "Draven",
   "Katarina",
@@ -11,6 +12,8 @@ export const NoxusChampions = [
   "Urgot",
   "Vladimir",
   "Kled",
+  "Samira",
+  "Rell",
 ];
 
 export const DemaciaChampions = [
